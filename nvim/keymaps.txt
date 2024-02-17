@@ -1,0 +1,40 @@
+mapleader = space
+autocorrect = ctrl, s
+project files = ctrl, p
+comments = ctrl, backslash
+help on word = shift,m
+yank till end of line = Y
+go to end of last word = E
+center cursor = m
+navigate buffers = tab | shift,tab
+drag lines: alt,j | alt,k
+begin of line: shift,h
+end of line: shift,l
+
+
+WhichKey cheatsheet
+  - delete buffer: space + d
+  - explorer: space + e
+  - home: space + h
+  - quit: space + q
+  - undo history: space + u 
+  - save: space + w
+  - format: space + af 
+  - toggle autocomplete menu: space + al
+  - find buffer: space + fb
+  - find projects: space + ff
+  - find help: space + fh
+  - find keymaps: space + fk
+  - find themes: space + ft
+  - find yanks: space + fy
+
+
+
+Vimtex
+  - build latex file: space + b
+  - open the index: space + i // ? 
+  - preview current line: space + v
+  - kill aux files: space + ak 
+
+TODO:
+change completion to tab
