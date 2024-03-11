@@ -96,5 +96,5 @@ keymap("n", ">", "<S-v>><esc>", opts)
 -- Navigate display lines
 keymap("n", "J", "gj", opts)
 keymap("n", "K", "gk", opts)
-keymap("v", "J", "gj", opts)
+-- keymap("v", "J", "gj", opts)
 keymap("v", "K", "gk", opts)
