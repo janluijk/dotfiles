@@ -105,16 +105,16 @@ return {
 				{ name = "luasnip" }, -- snippets
 				{ name = "vimtex" },
 				{ name = "buffer", keyword_length = 3 }, -- text within current buffer
-				{
-					name = "spell",
-					keyword_length = 4,
-					option = {
-						keep_all_entries = false,
-						enable_in_context = function()
-							return true
-						end,
-					},
-				},
+				-- {
+				-- 	name = "spell",
+				-- 	keyword_length = 4,
+				-- 	option = {
+				-- 		keep_all_entries = false,
+				-- 		enable_in_context = function()
+				-- 			return true
+				-- 		end,
+				-- 	},
+				-- },
 				{ name = "path" },
 			}),
 			confirm_opts = {
