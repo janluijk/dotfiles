@@ -4,13 +4,14 @@
 DOTFILES_DIR="$HOME/dotfiles"
 DOTBOT_DIR="lib/dotbot"
 DOTBOT_BIN="bin/dotbot"
+SYMLINK_FILE="symlinks.yaml"
 
 function setup_dot_files () {
   echo -e "Setting up Symlinks"
   cd "${DOTFILES_DIR}"
   git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-  git submodule update --init recursive "${DOTBOT_DIR}"
-  chmod +x /lib/dotbot/bin/dotbot
+  git submodule update --init --recursive "${DOTBOT_DIR}"
+  chmod +x lib/dotbot/bin/dotbot
   "${DOTFILES_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${DOTFILES_DIR}" -c "${SYMLINK_FILE}" "${@}"
 }
 
