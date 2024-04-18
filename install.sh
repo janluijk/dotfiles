@@ -16,7 +16,7 @@ function setup_dot_files () {
 
 function install_packages () {
   echo -e "\n Installing packages"
-  arch_pkg_install_script = "${DOTFILES_DIR}/scripts/installs/arch-pacman.sh"
+  arch_pkg_install_script = "${DOTFILES_DIR}/scripts/arch-pacman.sh"
   chmod +x $arch_pkg_install_script
   $arch_pkg_install_script
 }
