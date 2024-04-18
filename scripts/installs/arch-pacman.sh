@@ -23,7 +23,7 @@ pacman_apps=(
   'bluez'
   'pavucontrol'
   'pipewire-pulse'
-
+https://github.com/janluijk/dotfiles.git
   # Utils
   'brightnessctl'
 
