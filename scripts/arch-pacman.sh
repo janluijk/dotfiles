@@ -15,56 +15,53 @@ pacman_apps=(
   'lazygit'             # CLI Git tool
   'lf'                  # CLI directory browser
 
-  # Programming
-  'clang'               # CPP 
-
   # Audio 
   'blueman'
   'bluez'
   'pavucontrol'
   'pipewire-pulse'
-https://github.com/janluijk/dotfiles.git
+
   # Utils
   'brightnessctl'
 
   # Environments
-  'hyprland-git'        # Window manager
+  'hyprland'            # Window manager
   'waybar'              # Statusbar
   'dunst'               # Notification manager
-  'grimblast'           # Screenshots
+  'grimblast'           # Screenshots NOT FOUND
   'hyprpicker-git'      # Color picker
-  'input-remapper-git'  # Input remapper
-  'nwg-displays'        # Configure displays
+  'input-remapper-git'  # Input remapper NOT FOUND
+  'nwg-displays'        # Configure displays NOT FOUND
   'networkmanager'
   'network-manager-applet'
 
   # Other
   'discord'        
   'firefox'       # Web browser
-  'spotify'
+  'spotify'             # NOT FOUND
 
   # CLI Fun
   'lolcat'
   'neofetch'
-  'cava'
+  'cava'                # NOT FOUND
 )
 
 if [ "$EUID" -ne 0 ]; then
+  echo -e "This script should be run in sudo"
   exit 1
 fi
 
 echo -e "Starting install..."
-  for app in ${pacman_apps[@]}; do
-    if hash "${app}" 2> /dev/null; then
-      echo -e "[Skipping] ${app} is already installed"
-    elif [[ $(echo $(pacman -Qk $(echo $app | tr 'A-Z' 'a-z') 2> /dev/null )) == *"total files"* ]]; then
-      echo -e "[Skipping] ${app} is already installed via Pacman"
-    else
-      echo -e "[Installing] Downloading ${app}..."
-      sudo pacman -S ${app} --noconfirm
-    fi
-  done
-fi
+for app in ${pacman_apps[@]}; do
+  if hash "${app}" 2> /dev/null; then
+    echo -e "[Skipping] ${app} is already installed"
+  elif [[ $(echo $(pacman -Qk $(echo $app | tr 'A-Z' 'a-z') 2> /dev/null )) == *"total files"* ]]; then
+    echo -e "[Skipping] ${app} is already installed via Pacman"
+  else
+    echo -e "[Installing] Downloading ${app}..."
+    sudo paru -S ${app} --noconfirm
+  fi
+done
 
 echo -e "Finished installing / updating Arch packages."
 # EOF

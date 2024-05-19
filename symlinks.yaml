@@ -1,14 +1,10 @@
 - defaults:
     link:
-      relink: true
+        create: true
+        relink: true
 
 - clean: ['~']
 
-
 - link:
-  ${HOME}/.config/nvim: config/nvim
-  ${HOME}/.config/tmux: config/tmux
-  ${HOME}/.config/fish: config/fish
-
-- create:
-  - ~/downloads
+    ${XDG_CONFIG_HOME}/nvim: config/nvim
+    ${XDG_CONFIG_HOME}/fish: config/fish

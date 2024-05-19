@@ -7,6 +7,10 @@ DOTBOT_BIN="bin/dotbot"
 SYMLINK_FILE="symlinks.yaml"
 
 function setup_dot_files () {
+  echo -e "Setting up environment variables"
+  export XDG_CONFIG_HOME="${HOME}/.config"
+  export XDG_DATA_HOME="${HOME}/.local/share"
+
   echo -e "Setting up Symlinks"
   cd "${DOTFILES_DIR}"
   git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
@@ -17,9 +21,9 @@ function setup_dot_files () {
 
 function install_packages () {
   echo -e "\n Installing packages"
-  arch_pkg_install_script = "${DOTFILES_DIR}/scripts/arch-pacman.sh"
-  chmod +x $arch_pkg_install_script
-  $arch_pkg_install_script
+  arch_pkg_install_script="${DOTFILES_DIR}/scripts/arch-pacman.sh"
+  chmod +x ${arch_pkg_install_script}
+  ${arch_pkg_install_script}
 }
 
 setup_dot_files
