@@ -5,7 +5,6 @@ pacman_apps=(
   'git'                 # Version control
   'neovim'              # Text editor
   'thunar'              # Directory browser
-  'tmux'                # Term multiplexer
   'fish'                # Terminal
   'kitty'               # Terminal emulator
 
@@ -27,17 +26,12 @@ pacman_apps=(
   # Environments
   'hyprland'            # Window manager
   'waybar'              # Statusbar
-  'dunst'               # Notification manager
-  'grimblast'           # Screenshots NOT FOUND
-  'hyprpicker-git'      # Color picker
-  'input-remapper-git'  # Input remapper NOT FOUND
-  'nwg-displays'        # Configure displays NOT FOUND
   'networkmanager'
   'network-manager-applet'
 
   # Other
   'discord'        
-  'firefox'       # Web browser
+  'firefox'             # Web browser
   'spotify'             # NOT FOUND
 
   # CLI Fun
