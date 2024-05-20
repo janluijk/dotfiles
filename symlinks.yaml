@@ -8,3 +8,5 @@
 - link:
     ${XDG_CONFIG_HOME}/nvim: config/nvim
     ${XDG_CONFIG_HOME}/fish: config/fish
+    ${XDG_CONFIG_HOME}/hypr: config/hypr
+    ${XDG_CONFIG_HOME}/waybar: config/waybar

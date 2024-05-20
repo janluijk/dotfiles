@@ -23,7 +23,7 @@ function install_packages () {
   echo -e "\n Installing packages"
   arch_pkg_install_script="${DOTFILES_DIR}/scripts/arch-pacman.sh"
   chmod +x ${arch_pkg_install_script}
-  ${arch_pkg_install_script}
+  sudo ${arch_pkg_install_script}
 }
 
 setup_dot_files
