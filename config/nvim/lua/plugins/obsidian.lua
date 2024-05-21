@@ -18,4 +18,4 @@ return {
       },
     },
   },
-}git commit -m "change vim config to minimal config, add fish and waybar current config"
+}
