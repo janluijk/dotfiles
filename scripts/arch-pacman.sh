@@ -14,12 +14,6 @@ pacman_apps=(
   'lazygit'             # CLI Git tool
   'lf'                  # CLI directory browser
 
-  # Audio 
-  'blueman'
-  'bluez'
-  'pavucontrol'
-  'pipewire-pulse'
-
   # Utils
   'brightnessctl'
 
@@ -27,7 +21,11 @@ pacman_apps=(
   'hyprland'            # Window manager
   'waybar'              # Statusbar
   'networkmanager'
-  'network-manager-applet'
+
+  # Fonts
+  'ttf-jetbrains-mono-nerd'
+  'otf-font-awesome'
+
 
   # Other
   'discord'        
@@ -53,7 +51,7 @@ for app in ${pacman_apps[@]}; do
     echo -e "[Skipping] ${app} is already installed via Pacman"
   else
     echo -e "[Installing] Downloading ${app}..."
-    sudo paru -S ${app} --noconfirm
+    sudo pacman -S ${app} --noconfirm
   fi
 done
 

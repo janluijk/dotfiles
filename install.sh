@@ -27,4 +27,5 @@ function install_packages () {
 }
 
 setup_dot_files
+copy_scripts
 install_packages
