@@ -29,6 +29,9 @@ keymap("n", "<CR>", ":noh<CR>", opts)
 -- Yank till end of line
 keymap("n", "Y", "y$", opts)
 
+-- Kill search highlights
+keymap("n", "<CR>", ":noh<CR>", opts)
+
 -- To previous word
 keymap("n", "E", "ge", opts)
 

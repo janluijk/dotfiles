@@ -43,7 +43,7 @@ return {
       mode = { "n", "v" },
 
       c = { "<cmd>qa!<CR>", "Close all" },
-      e = { "<cmd>Neotree filesystem toggle left<CR>", "Explorer" },
+      e = { "<cmd>Neotree filesystem toggle float<CR>", "Explorer" },
       h = { "<cmd>Alpha<CR>", "Home" },
       q = { "<cmd>update! | bdelete!<CR>", "Delete buffer" },
       w = { "<cmd>wa!<CR>", "Write" },
@@ -62,12 +62,8 @@ return {
           "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<CR>",
           "buffers",
         },
-        c = { "<cmd>Telescope bibtex format_string=\\citet{%s}<CR>", "citations" },
-        f = { "<cmd>Telescope live_grep theme=ivy<CR>", "project" },
-        g = { "<cmd>Telescope git_branches<CR>", "branches" },
-        h = { "<cmd>Telescope help_tags<CR>", "help" },
-        k = { "<cmd>Telescope keymaps<CR>", "keymaps" },
-        r = { "<cmd>Telescope registers<CR>", "registers" },
+        f = { "<cmd>Telescope live_grep<CR>", "search" },
+        p = { "<cmd>Telescope find_files<CR>", "files" },
         t = { "<cmd>Telescope colorscheme<CR>", "theme" },
         y = { "<cmd>YankyRingHistory<CR>", "yanks" },
       },
@@ -82,6 +78,7 @@ return {
         p = { "<cmd>Gitsigns preview_hunk<CR>", "preview hunk" },
         r = { "<cmd>lua require 'gitsigns'.reset_hunk()<CR>", "reset hunk" },
         s = { "<cmd>lua require 'gitsigns'.stage_hunk()<CR>", "stage hunk" },
+        t = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "toggle current line blame" },
         u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>", "unstage hunk" },
       },
 
@@ -102,24 +99,6 @@ return {
         T = { "<cmd>Telescope lsp_type_definitions<CR>", "type definition" },
       },
 
-      L = {
-        name = "LATEX",
-        b = { "<cmd>VimtexCompile<CR>", "build" },
-        c = { "<cmd>VimtexCountWords!<CR>", "count" },
-        e = { "<cmd>VimtexErrors<CR>", "errors" },
-        i = { "<cmd>VimtexTocOpen<CR>", "index" },
-        k = { "<cmd>VimtexClean<CR>", "kill aux" },
-        r = { "<cmd>:VimtexClearCache All<CR>", "reset vimtex" },
-        u = { "<cmd>cd %:p:h<CR>", "update cwd" },
-        v = { "<cmd>VimtexView<CR>", "view" },
-      },
-
-      m = {
-        name = "MARKDOWN",
-        v = { "<cmd>Slides<CR>", "view slides" },
-        m = { "<cmd>MarkdownPreview<CR>", "markdown preview" },
-      },
-
       S = {
         name = "SESSIONS",
         s = { "<cmd>SessionManager save_current_session<CR>", "save" },
@@ -132,27 +111,6 @@ return {
         s = { "<Plug>(nvim-surround-normal)", "surround" },
         d = { "<Plug>(nvim-surround-delete)", "delete" },
         c = { "<Plug>(nvim-surround-change)", "change" },
-      },
-
-      t = {
-        name = "TEMPLATES",
-        c = { "<cmd>PackerCompile<CR>", "Compile" },
-        a = {
-          "<cmd>read ~/.config/nvim/templates/assignment.tex<CR>",
-          "assignment.tex",
-        },
-        e = {
-          "<cmd>read ~/.config/nvim/templates/essay.tex<CR>",
-          "essay.tex",
-        },
-        h = {
-          "<cmd>read ~/.config/nvim/templates/homework.tex<CR>",
-          "homework.tex",
-        },
-        m = {
-          "<cmd>read ~/.config/nvim/templates/minimal-essay.tex<CR>",
-          "minimal-essay.tex",
-        },
       },
     },
   },
