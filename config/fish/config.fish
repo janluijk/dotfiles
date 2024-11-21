@@ -20,4 +20,6 @@ alias oo='cd $HOME/personal/vault/personal'
 
 alias config='cd $HOME/dotfiles/config & nvim'
 
+alias nvimfzf='nvim $(fzf)'
+
 starship init fish | source
