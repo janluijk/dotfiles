@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
 pacman_apps=(
+  'ly'
+  'obsidian'
+  'starship'
+  'wl-clipboard'
+  'hyprlock'
+  'hyprpaper'
+
   # Essentials
   'git'                 # Version control
   'neovim'              # Text editor
