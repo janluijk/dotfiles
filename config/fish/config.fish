@@ -1,6 +1,9 @@
 set fish_greeting
 set -gx EDITOR nvim
 
+bind \cH backward-kill-word
+
+# Aliases
 alias vim=nvim
 
 # Dotfiles
