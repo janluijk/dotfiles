@@ -10,6 +10,7 @@ function setup_dot_files () {
   echo -e "Setting up environment variables"
   export XDG_CONFIG_HOME="${HOME}/.config"
   export XDG_DATA_HOME="${HOME}/.local/share"
+  export XDG_BIN_HOME="${HOME}/.local/bin"
 
   echo -e "Setting up Symlinks"
   cd "${DOTFILES_DIR}"
@@ -26,6 +27,19 @@ function install_packages () {
   sudo ${arch_pkg_install_script}
 }
 
+function post_install_config () {
+  echo -e "Enable ly desktop manager"
+  sudo systemctl enable ly.service
+
+  echo -e "\n Setting fish as default shell"
+  chsh -s /bin/fish
+
+  echo -e "\n Getting wallpapers"
+  mkdir -p ~/pictures/wallpapers/
+  cp -r ./wallpapers/* ~/pictures/wallpapers/
+}
+
 setup_dot_files
 copy_scripts
 install_packages
+post_install_config
