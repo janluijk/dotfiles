@@ -20,5 +20,5 @@ lazy.setup({
 })
 
 -- Post plugin configuration
---
-vim.cmd 'colorscheme gruvbox'
+
+vim.cmd 'colorscheme catppuccin'

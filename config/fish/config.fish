@@ -7,7 +7,7 @@ bind \cH backward-kill-word
 alias vim=nvim
 
 # Dotfiles
-alias dotfiles='cd $HOME/dotfiles & nvim'
+alias dotfiles='cd $HOME/dotfiles'
 
 # Nvim config
 alias vimrc='cd $HOME/dotfiles/config/nvim & nvim'
