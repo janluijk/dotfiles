@@ -11,3 +11,5 @@
     ${XDG_CONFIG_HOME}/hypr: config/hypr
     ${XDG_CONFIG_HOME}/waybar: config/waybar
     ${XDG_CONFIG_HOME}/kitty: config/kitty
+    ${XDG_CONFIG_HOME}/rofi: config/rofi
+
