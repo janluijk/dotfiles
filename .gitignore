@@ -1,2 +1,3 @@
 install_copy.sh
 config/nvim/other/sessions/
+config/nvim/lazy-lock.json
