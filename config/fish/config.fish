@@ -1,6 +1,8 @@
 set fish_greeting
 set -gx EDITOR nvim
 
+set -U fish_user_paths /home/jan/.local/bin $fish_user_paths
+
 bind \cH backward-kill-word
 
 # Aliases
@@ -23,3 +25,7 @@ alias config='cd $HOME/dotfiles/config & nvim'
 alias nvimfzf='nvim $(fzf)'
 
 starship init fish | source
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

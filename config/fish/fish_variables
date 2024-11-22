@@ -9,4 +9,4 @@ SETUVAR fish_color_status:red
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/jan/\x2ebin
+SETUVAR fish_user_paths:/home/jan/\x2elocal/bin\x1e/home/jan/\x2ebin
