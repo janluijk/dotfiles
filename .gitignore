@@ -2,3 +2,4 @@ install_copy.sh
 config/nvim/other/sessions/
 config/nvim/lazy-lock.json
 config/HyprPanel
+config/nvim_bac/nvim
