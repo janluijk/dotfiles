@@ -6,12 +6,10 @@
 - clean: ['~']
 
 - link:
-    ${XDG_CONFIG_HOME}/nvim: config/nvim
-    ${XDG_CONFIG_HOME}/fish: config/fish
     ${XDG_CONFIG_HOME}/hypr: config/hypr
-    ${XDG_CONFIG_HOME}/ags: config/HyprPanel
-    ${XDG_CONFIG_HOME}/waybar: config/waybar
     ${XDG_CONFIG_HOME}/kitty: config/kitty
-    ${XDG_CONFIG_HOME}/rofi: config/rofi
-    ${XDG_BIN_HOME}: bin  
+    ${XDG_CONFIG_HOME}/fish: config/fish
+    ${XDG_CONFIG_HOME}/starship.toml: config/starship.toml
+#    ${XDG_CONFIG_HOME}/nvim: config/nvim
+#    ${XDG_BIN_HOME}: bin
 

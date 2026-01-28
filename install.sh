@@ -12,6 +12,11 @@ function setup_dot_files () {
   export XDG_DATA_HOME="${HOME}/.local/share"
   export XDG_BIN_HOME="${HOME}/.local/bin"
 
+  echo -e "Creating config directories if missing"
+  mkdir -p "${XDG_CONFIG_HOME}"
+  mkdir -p "${XDG_DATA_HOME}"
+  mkdir -p "${XDG_BIN_HOME}"
+
   echo -e "Setting up Symlinks"
   cd "${DOTFILES_DIR}"
   git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
@@ -22,24 +27,10 @@ function setup_dot_files () {
 
 function install_packages () {
   echo -e "\n Installing packages"
-  arch_pkg_install_script="${DOTFILES_DIR}/scripts/arch-pacman.sh"
-  chmod +x ${arch_pkg_install_script}
-  sudo ${arch_pkg_install_script}
-}
-
-function post_install_config () {
-  echo -e "Enable ly desktop manager"
-  sudo systemctl enable ly.service
-
-  echo -e "\n Setting fish as default shell"
-  chsh -s /bin/fish
-
-  echo -e "\n Getting wallpapers"
-  mkdir -p ~/pictures/wallpapers/
-  cp -r ./wallpapers/* ~/pictures/wallpapers/
+  # arch_pkg_install_script="${DOTFILES_DIR}/install-packages.sh"
+  # chmod +x ${arch_pkg_install_script}
+  # sudo ${arch_pkg_install_script}
 }
 
 setup_dot_files
-copy_scripts
-install_packages
-post_install_config
+#install_packages
