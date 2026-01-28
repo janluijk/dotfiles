@@ -1,0 +1,9 @@
+# Blacklisted applications (one pattern per line)
+# Lines starting with # are comments
+# Patterns are case-insensitive and match anywhere in the app name
+xgps
+kde
+xfce
+qt
+system
+GUI

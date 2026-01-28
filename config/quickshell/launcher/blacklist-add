@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Add applications to the launcher blacklist
+# Usage: blacklist-add <pattern>
+
+BLACKLIST_FILE="$HOME/.config/quickshell/launcher/blacklist.txt"
+
+if [[ -z "$1" ]]; then
+    echo "Usage: blacklist-add <pattern>"
+    echo "Example: blacklist-add qt"
+    echo ""
+    echo "Current blacklist:"
+    grep -v '^#' "$BLACKLIST_FILE" | grep -v '^$'
+    exit 1
+fi
+
+pattern="$1"
+
+# Find matching applications from .desktop files
+echo "Applications matching '$pattern':"
+echo "─────────────────────────────────"
+
+matches=()
+while IFS= read -r desktop_file; do
+    name=$(grep -m1 '^Name=' "$desktop_file" 2>/dev/null | cut -d= -f2)
+    if [[ -n "$name" && "${name,,}" == *"${pattern,,}"* ]]; then
+        matches+=("$name")
+        echo "  $name"
+    fi
+done < <(find /usr/share/applications ~/.local/share/applications -name '*.desktop' 2>/dev/null)
+
+if [[ ${#matches[@]} -eq 0 ]]; then
+    echo "  (no matches found)"
+    exit 0
+fi
+
+echo ""
+read -p "Add '$pattern' to blacklist? [y/N] " confirm
+
+if [[ "${confirm,,}" == "y" ]]; then
+    echo "$pattern" >> "$BLACKLIST_FILE"
+    echo "Added '$pattern' to blacklist. Restart launcher to apply."
+else
+    echo "Cancelled."
+fi
