@@ -1,0 +1,7 @@
+module services
+
+singleton Audio 1.0 Audio.qml
+singleton Brightness 1.0 Brightness.qml
+singleton Hypr 1.0 Hypr.qml
+singleton Time 1.0 Time.qml
+singleton Visibilities 1.0 Visibilities.qml

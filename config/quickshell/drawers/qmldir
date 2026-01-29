@@ -1,0 +1,7 @@
+module drawers
+
+Drawers 1.0 Drawers.qml
+Border 1.0 Border.qml
+Backgrounds 1.0 Backgrounds.qml
+Panels 1.0 Panels.qml
+Interactions 1.0 Interactions.qml

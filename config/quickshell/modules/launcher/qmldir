@@ -1,0 +1,7 @@
+module modules.launcher
+
+Wrapper 1.0 Wrapper.qml
+Content 1.0 Content.qml
+AppList 1.0 AppList.qml
+AppItem 1.0 AppItem.qml
+Background 1.0 Background.qml
