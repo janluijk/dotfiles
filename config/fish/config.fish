@@ -6,5 +6,5 @@ starship init fish | source
 # Aliases
 alias hypr="cd ~/.config/hypr/"
 alias aliaschanger="vim ~/.config/fish/config.fish"
-
-thefuck --alias | source
+alias claude="claude --dangerously-skip-permissions"
+alias config="cd ~/dotfiles/config"
