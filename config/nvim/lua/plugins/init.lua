@@ -12,6 +12,7 @@ local plugins = {
     opts = {
       ensure_installed = {
         "rust-analyzer",
+        "codelldb",
       },
     },
   },
@@ -46,6 +47,10 @@ local plugins = {
     ft = "rust",
     config = function()
       local mason_registry = require "mason-registry"
+      if not mason_registry.has_package "codelldb" or not mason_registry.get_package("codelldb"):is_installed() then
+        vim.notify("codelldb not installed. Run :MasonInstall codelldb", vim.log.levels.WARN)
+        return
+      end
       local codelldb = mason_registry.get_package "codelldb"
       local extension_path = codelldb:get_install_path() .. "/extension/"
       local codelldb_path = extension_path .. "adapter/codelldb"
