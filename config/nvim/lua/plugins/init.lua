@@ -127,9 +127,14 @@ local plugins = {
   {
     "folke/which-key.nvim",
     opts = {
+      -- Only show explicitly defined spec entries, hide auto-discovered keymaps
+      filter = function(mapping)
+        return mapping.noremap == nil
+      end,
       plugins = {
         marks = false,
         registers = false,
+        spelling = { enabled = false },
         presets = {
           operators = false,
           motions = false,
@@ -141,10 +146,59 @@ local plugins = {
         },
       },
       spec = {
+        -- AI / Claude
         { "<leader>a", group = "AI/Claude" },
+        { "<leader>ac", desc = "Toggle Claude" },
+        { "<leader>af", desc = "Focus Claude" },
+        { "<leader>as", desc = "Send to Claude", mode = "v" },
+        { "<leader>ab", desc = "Add buffer to Claude" },
+        { "<leader>aa", desc = "Accept diff" },
+        { "<leader>ad", desc = "Deny diff" },
+
+        -- Debugger
         { "<leader>d", group = "Debugger" },
+        { "<leader>db", desc = "Toggle breakpoint" },
+        { "<leader>dd", desc = "Conditional breakpoint" },
+        { "<leader>dc", desc = "Continue" },
+        { "<leader>dl", desc = "Step into" },
+        { "<leader>dj", desc = "Step over" },
+        { "<leader>dk", desc = "Step out" },
+        { "<leader>de", desc = "Terminate" },
+        { "<leader>dr", desc = "Run last" },
+        { "<leader>ds", desc = "Diagnostics list" },
+
+        -- Find (Telescope)
         { "<leader>f", group = "Find" },
-        { "<leader>w", group = "Workspace" },
+        { "<leader>ff", desc = "Find files" },
+        { "<leader>fa", desc = "Find all files" },
+        { "<leader>fw", desc = "Live grep" },
+        { "<leader>fb", desc = "Find buffers" },
+        { "<leader>fh", desc = "Help tags" },
+        { "<leader>fo", desc = "Recent files" },
+        { "<leader>fz", desc = "Fuzzy find in buffer" },
+        { "<leader>fm", desc = "Format file" },
+
+        -- File explorer
+        { "<leader>e", desc = "Toggle explorer" },
+
+        -- Buffers
+        { "<leader>b", desc = "New buffer" },
+        { "<leader>x", desc = "Close buffer" },
+
+        -- General
+        { "<leader>c", desc = "Close all" },
+        { "<leader>W", desc = "Save all" },
+        { "<leader>/", desc = "Toggle comment" },
+        { "<leader>n", desc = "Toggle line numbers" },
+
+        -- LSP
+        { "<leader>r", group = "Refactor" },
+        { "<leader>ra", desc = "Rename symbol" },
+        { "<leader>rn", desc = "Toggle relative numbers" },
+        { "<leader>D", desc = "Type definition" },
+
+        -- Theme
+        { "<leader>th", desc = "Change theme" },
       },
     },
   },
