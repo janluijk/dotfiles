@@ -4,7 +4,10 @@ set fish_greeting
 starship init fish | source
 
 # Aliases
+alias vim=nvim
 alias hypr="cd ~/.config/hypr/"
 alias aliaschanger="vim ~/.config/fish/config.fish"
 alias claude="claude --dangerously-skip-permissions"
 alias config="cd ~/dotfiles/config"
+
+thefuck --alias | source
