@@ -124,6 +124,30 @@ local plugins = {
     lazy = false,
     config = true,
   },
+  {
+    "folke/which-key.nvim",
+    opts = {
+      plugins = {
+        marks = false,
+        registers = false,
+        presets = {
+          operators = false,
+          motions = false,
+          text_objects = false,
+          windows = false,
+          nav = false,
+          z = false,
+          g = false,
+        },
+      },
+      spec = {
+        { "<leader>a", group = "AI/Claude" },
+        { "<leader>d", group = "Debugger" },
+        { "<leader>f", group = "Find" },
+        { "<leader>w", group = "Workspace" },
+      },
+    },
+  },
 }
 
 return plugins
