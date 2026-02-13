@@ -69,6 +69,14 @@ map("n", "<", "<S-v><<esc>", { desc = "Indent backwards" })
 map("n", ">", "<S-v>><esc>", { desc = "Indent forwards" })
 
 
+-- Claude Code
+map("n", "<leader>ac", "<cmd>ClaudeCode<cr>", { desc = "Toggle Claude" })
+map("n", "<leader>af", "<cmd>ClaudeCodeFocus<cr>", { desc = "Focus Claude" })
+map("v", "<leader>as", "<cmd>ClaudeCodeSend<cr>", { desc = "Send to Claude" })
+map("n", "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>", { desc = "Add buffer to Claude" })
+map("n", "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", { desc = "Accept Claude diff" })
+map("n", "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", { desc = "Deny Claude diff" })
+
 map({"n", "v"}, "<leader>c", "<cmd>qa!<CR>", { desc = "Close all" })
 map({"n", "v"}, "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer" })
 map({"n", "v"}, "<leader>W", "<cmd>wa!<CR>", { desc = "Write" })

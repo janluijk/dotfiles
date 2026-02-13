@@ -119,6 +119,11 @@ local plugins = {
       require("nvim-dap-virtual-text").setup()
     end,
   },
+  {
+    "coder/claudecode.nvim",
+    lazy = false,
+    config = true,
+  },
 }
 
 return plugins
